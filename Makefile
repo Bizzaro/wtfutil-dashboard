@@ -48,6 +48,13 @@ build:
 	go build -o bin/${APP}
 	@echo "Done building"
 
+## buildar,: builds a local version for arm
+buildarm:
+	@echo "$$HEADER"
+	@echo "Building for ARM..."
+	env GOOS=linux GOARCH=arm GOARM=6 go build -o bin/${APP}
+	@echo "Done building"
+
 ## clean: removes old build cruft
 clean:
 	rm -rf ./dist
