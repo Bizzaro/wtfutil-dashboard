@@ -14,9 +14,10 @@ const (
 type Settings struct {
 	common *cfg.Common
 
-	route  string `help:"Route Number of your bus"`
-	agency string `help:"Transit agency of your bus"`
-	stopID string `help:"Your bus stop number"`
+	route   string `help:"Route Number of your bus"`
+	agency  string `help:"Transit agency of your bus"`
+	stopID  string `help:"Your bus stop number"`
+	stopTag string `help:"Your bus stop tag"`
 }
 
 // NewSettingsFromYAML creates a new settings instance from a YAML config block
@@ -24,9 +25,10 @@ func NewSettingsFromYAML(name string, ymlConfig *config.Config, globalConfig *co
 	settings := Settings{
 		common: cfg.NewCommonSettingsFromModule(name, defaultTitle, defaultFocusable, ymlConfig, globalConfig),
 
-		route:  ymlConfig.UString("route"),
-		agency: ymlConfig.UString("agency"),
-		stopID: ymlConfig.UString("stopID"),
+		route:   ymlConfig.UString("route"),
+		agency:  ymlConfig.UString("agency"),
+		stopID:  ymlConfig.UString("stopID"),
+		stopTag: ymlConfig.UString("stopTag"),
 	}
 
 	return &settings
