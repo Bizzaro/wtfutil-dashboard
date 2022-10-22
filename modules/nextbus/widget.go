@@ -120,6 +120,8 @@ func getNextBus(agency string, route string, stopID string, stopTag string) stri
 
 	directionParseType := ""
 
+	// theres probably a better way to do this in go with interfaces that I don't have time to learn right now
+	// https://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go
 	directional := Direction{}
 	if err := json.Unmarshal(parsedResponse.Predictions.DirectionRaw, &directional); err == nil {
 		directionParseType = "object"
