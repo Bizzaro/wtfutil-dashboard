@@ -2,12 +2,19 @@
 
 ## Unreleased
 
+## v0.42.0
+
 ### ⚡️ Added
 
 * [FeedReader module](https://wtfutil.com/modules/feedreader/) now displays the name of the parent feed in front of the feed item, [#1138](https://github.com/wtfutil/wtf/issues/1138) by [@igbanam](https://github.com/igbanam)
 * Steam Status module added by [@despreston](https://github.com/despreston)
 * Working directory option for CmdRunner, [#1293](https://github.com/wtfutil/wtf/issues/1293) by [@Seanstoppable](https://github.com/Seanstoppable)
 * Updated to Go 1.18, by [@Seanstoppable](https://github.com/Seanstoppable)
+* "compact" option added to [Weather module](https://wtfutil.com/modules/weather_services/weather/) by [@Bizzaro](https://github.com/Bizzaro)
+* Mempool cryptocurrency module by [@Bizzaro](https://github.com/Bizzaro)
+* [Nextbus module](http://nextbus.com) added by [@Bizzaro](https://github.com/Bizzaro)
+* URLCheck module added by [@pliski](https://github.com/pliski)
+* Twitch modules added by [@zyrre](https://github.com/zyrre)
 
 ### 🐞 Fixed
 
