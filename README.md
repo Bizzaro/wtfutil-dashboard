@@ -19,9 +19,24 @@ Awesome! [See here](https://wtfutil.com/sponsors/exit_message/) for how you can 
 ## Sponsored by
 
 <p>
-	<a href="https://airbrake.io/?utm_medium=sponsor&utm_source=WTFutill&utm_content=airbrake-home-page&utm_campaign=2021-sponsorships" target=_blank>
-		<img src="./images/sponsors/airbrake.png?raw=true" height="60" title="Airbrake" alt="Airbrake" />
-	</a>
+  <table>
+    <tr>
+      <td>
+        <strong>Robusta.dev</strong>
+        <br />
+        <a href="https://home.robusta.dev/?utm_source=wtfutil&utm_medium=oss-sponsorship&utm_id=wtfutil-sponsorship" target=_blank>
+		      <img src="./images/sponsors/robusta.png?raw=true" height="60" title="Robusta.dev" alt="Robusta.dev" />
+	      </a>
+      </td>
+      <td>
+        <strong>Airbrake</strong>
+        <br />
+	      <a href="https://airbrake.io/?utm_medium=sponsor&utm_source=WTFutill&utm_content=airbrake-home-page&utm_campaign=2021-sponsorships" target=_blank>
+		      <img src="./images/sponsors/airbrake.png?raw=true" height="60" title="Airbrake" alt="Airbrake" />
+	      </a>
+      </td>
+    </tr>
+  <table>
 </p>
 
 <hr />
@@ -472,6 +487,9 @@ Dependency management in WTF is handled by [Go modules](https://github.com/golan
   </tr>
   <tr>
     <td align="center"><a href="https://www.youtube.com/c/bashbunni"><img src="https://avatars.githubusercontent.com/u/15822994?v=4?s=48" width="48px;" alt=""/><br /><sub><b>bashbunni</b></sub></a><br /></td>
+    <td align="center"><a href="http://ronrecord.com/"><img src="https://avatars.githubusercontent.com/u/940230?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Ronald Record</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/michenriksen"><img src="https://avatars.githubusercontent.com/u/304361?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Michael Henriksen</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/reiktar"><img src="https://avatars.githubusercontent.com/u/17817067?v=4?s=48" width="48px;" alt=""/><br /><sub><b>Markus</b></sub></a><br /></td>
   </tr>
 </table>
 

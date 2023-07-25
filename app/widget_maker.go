@@ -47,6 +47,7 @@ import (
 	"github.com/wtfutil/wtf/modules/krisinformation"
 	"github.com/wtfutil/wtf/modules/kubernetes"
 	"github.com/wtfutil/wtf/modules/logger"
+	"github.com/wtfutil/wtf/modules/lunarphase"
 	"github.com/wtfutil/wtf/modules/mercurial"
 	"github.com/wtfutil/wtf/modules/nbascore"
 	"github.com/wtfutil/wtf/modules/newrelic"
@@ -54,8 +55,10 @@ import (
 	"github.com/wtfutil/wtf/modules/opsgenie"
 	"github.com/wtfutil/wtf/modules/pagerduty"
 	"github.com/wtfutil/wtf/modules/pihole"
+	"github.com/wtfutil/wtf/modules/pivotal"
 	"github.com/wtfutil/wtf/modules/pocket"
 	"github.com/wtfutil/wtf/modules/power"
+	"github.com/wtfutil/wtf/modules/progress"
 	"github.com/wtfutil/wtf/modules/resourceusage"
 	"github.com/wtfutil/wtf/modules/rollbar"
 	"github.com/wtfutil/wtf/modules/security"
@@ -243,6 +246,9 @@ func MakeWidget(
 	case "logger":
 		settings := logger.NewSettingsFromYAML(moduleName, moduleConfig, config)
 		widget = logger.NewWidget(tviewApp, redrawChan, settings)
+	case "lunarphase":
+		settings := lunarphase.NewSettingsFromYAML(moduleName, moduleConfig, config)
+		widget = lunarphase.NewWidget(tviewApp, redrawChan, pages, settings)
 	case "mercurial":
 		settings := mercurial.NewSettingsFromYAML(moduleName, moduleConfig, config)
 		widget = mercurial.NewWidget(tviewApp, redrawChan, pages, settings)
@@ -273,6 +279,9 @@ func MakeWidget(
 	case "prettyweather":
 		settings := prettyweather.NewSettingsFromYAML(moduleName, moduleConfig, config)
 		widget = prettyweather.NewWidget(tviewApp, redrawChan, settings)
+	case "progress":
+		settings := progress.NewSettingsFromYAML(moduleName, moduleConfig, config)
+		widget = progress.NewWidget(tviewApp, redrawChan, settings)
 	case "pocket":
 		settings := pocket.NewSettingsFromYAML(moduleName, moduleConfig, config)
 		widget = pocket.NewWidget(tviewApp, redrawChan, pages, settings)
@@ -351,6 +360,9 @@ func MakeWidget(
 	case "zendesk":
 		settings := zendesk.NewSettingsFromYAML(moduleName, moduleConfig, config)
 		widget = zendesk.NewWidget(tviewApp, redrawChan, pages, settings)
+	case "pivotal":
+		settings := pivotal.NewSettingsFromYAML(moduleName, moduleConfig, config)
+		widget = pivotal.NewWidget(tviewApp, redrawChan, pages, settings)
 	case "finnhub":
 		settings := finnhub.NewSettingsFromYAML(moduleName, moduleConfig, config)
 		widget = finnhub.NewWidget(tviewApp, redrawChan, settings)
@@ -367,7 +379,7 @@ func MakeWidget(
 
 // MakeWidgets creates and returns a collection of enabled widgets
 func MakeWidgets(tviewApp *tview.Application, pages *tview.Pages, config *config.Config, redrawChan chan bool) []wtf.Wtfable {
-	widgets := []wtf.Wtfable{}
+	var widgets []wtf.Wtfable
 
 	moduleNames, _ := config.Map("wtf.mods")
 
